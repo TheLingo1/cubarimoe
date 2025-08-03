@@ -15,6 +15,10 @@ docker push ghcr.io/USERNAME/cubarimoe:latest
 
 Afterwards pull the image and run it on your server. It will be listening on port 8000 on the container so map that to your host port and access it from there.
 
+Once it is up and running, set up an admin user by going to the docker container's shell or using docker exec and running:
+```
+python3 manage.py createsuperuser
+```
 
 ## Other info
 Relevant URLs (as of now): 
