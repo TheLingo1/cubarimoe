@@ -1,55 +1,20 @@
 # Cubari.moe
 An image proxy powered by the Cubari reader.
 
-Testing Supported By<br/>
-<img width="160" src="http://foundation.zurb.com/sites/docs/assets/img/logos/browser-stack.svg" alt="BrowserStack"/>
+This is my modified version that makes dockerization and self-hosting easier
 
-## Prerequisites 
-- git
-- python 3.6.5+
-- pip
-- virtualenv
-
-## Install
-1. Create a venv for cubarimoe in your home directory.
+## Deploying
+Just build the image using
 ```
-virtualenv ~/cubarimoe
+docker build -t ghcr.io/USERNAME/cubarimoe:latest .
+```
+then push it to ghcr
+```
+docker push ghcr.io/USERNAME/cubarimoe:latest
 ```
 
-2. Clone cubarimoe's source code into the venv.
-```
-git clone https://github.com/appu1232/cubarimoe ~/cubarimoe/app
-```
+Afterwards pull the image and run it on your server. It will be listening on port 8000 on the container so map that to your host port and access it from there.
 
-3. Activate the venv.
-```
-cd ~/cubarimoe/app && source ../bin/activate
-```
-
-4. Install cubarimoe's dependencies.
-```
-pip3 install -r requirements.txt
-```
-
-5. Change the value of the `SECRET_KEY` variable to a randomly generated string.
-```
-sed -i "s|\"o kawaii koto\"|\"$(openssl rand -base64 32)\"|" cubarimoe/settings/base.py
-```
-
-6. Generate the default assets for cubarimoe.
-```
-python3 init.py
-```
-
-7. Create an admin user for cubarimoe.
-```
-python3 manage.py createsuperuser
-```
-
-## Start the server
--  `python3 manage.py runserver` - keep this console active
-
-Now the site should be accessible on localhost:8000
 
 ## Other info
 Relevant URLs (as of now): 
