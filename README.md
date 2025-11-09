@@ -1,7 +1,9 @@
 # Cubari.moe
 An image proxy powered by the Cubari reader.
 
-This is my modified version that makes dockerization and self-hosting easier
+This is my modified version that makes dockerization and self-hosting easier.
+
+I am also self hosting the proxy services so that has been changed as well.
 
 ## Deploying
 Just build the image using
